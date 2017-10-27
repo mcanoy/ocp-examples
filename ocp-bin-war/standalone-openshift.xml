@@ -412,25 +412,6 @@
                         </login-module>
                     </authentication>
                 </security-domain>
-                <security-domain name="ldap-security-2" cache-type="default">
-                    <authentication>
-                        <login-module code="LdapExtended" flag="required">
-                            <module-option name="java.naming.provider.url" value="ldap://ldap.forumsys.com:389"/>
-                            <module-option name="java.naming.factory.initial" value="com.sun.jndi.ldap.LdapCtxFactory"/>
-                            <module-option name="java.naming.security.authentication" value="simple"/>
-                            <module-option name="bindDN" value="cn=read-only-admin,dc=example,dc=com"/>
-                            <module-option name="bindCredential" value="password"/>
-                            <module-option name="baseCtxDN" value="dc=example,dc=com"/>
-                            <module-option name="baseFilter" value="(uid={0})"/>
-                            <module-option name="rolesCtxDN" value="dc=example,dc=com"/>
-                            <module-option name="roleFilter" value="(uniqueMember={1})"/>
-                            <module-option name="roleAttributeID" value="cn"/>
-                            <module-option name="roleNameAttributeID" value="cn"/>
-                            <module-option name="searchScope" value="SUBTREE_SCOPE"/>
-                            <module-option name="throwValidateError" value="true"/>
-                        </login-module>
-                    </authentication>
-                </security-domain>
                 <security-domain name="other" cache-type="default">
                     <authentication>
                         <login-module code="Remoting" flag="optional">
