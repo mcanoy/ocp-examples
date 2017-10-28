@@ -1,0 +1,3 @@
+NAMESPACE=gitlab-repo
+NAME=gitlab-user
+PRIORITY_LEVEL=9

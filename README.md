@@ -3,3 +3,4 @@
 Some basic examples demonstrating some OCP features
 
 * ocp-bin-war - Creating an application using a binary java archive. Using JBoss 7.0 and LDAP
+* gitlab-applier - Deploy Gitlab with Ansible automation. Auth via LDAP. SCC modification to allow image to run as root
