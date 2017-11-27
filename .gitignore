@@ -3,4 +3,5 @@
 **/.settings
 **/.project
 **/.tern-project
-gitlab-applier/casl-ansible
+**/.DS_Store
+**/casl-ansible

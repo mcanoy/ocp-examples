@@ -1,0 +1,5 @@
+node {
+  stage('Hubot Test Pipeline') {
+        hubotApprove message: "To proceed with this job?: bot-bot jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: bot-bot jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true
+    }
+}
