@@ -1,5 +1,12 @@
 node {
-  stage('Hubot Test Pipeline') {
-        hubotApprove message: "To proceed with this job?: bot-bot jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: bot-bot jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true
+   def url = env.HUBOT_URL
+   def room = env.HUBOT_DEFAULT_ROOM
+   
+   echo room
+   echo url
+
+   
+   stage('Hubot Test Pipeline') {
+        hubotApprove message: "To proceed with this job?: your-bot-name jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: your-bot-name jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true, room: room, url: url
     }
 }
