@@ -12,7 +12,7 @@ openshift_cluster_content:
     params: "{{ inventory_dir }}/../params/jenkins/build"
   - name: "jenkins-deploy"
     namespace: "hubot"
-    template: "https://raw.githubusercontent.com/mcanoy/labs-ci-cd/hubot/openshift-templates/jenkins-deploy/template-slack-sonar.json"
+    template: "https://raw.githubusercontent.com/mcanoy/labs-ci-cd/hubot/openshift-templates/jenkins-deploy/template.json"
     params: "{{ inventory_dir }}/../params/jenkins/deploy"
   - name: "hubot"
     namespace: "hubot"
