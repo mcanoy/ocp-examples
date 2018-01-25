@@ -1,12 +1,15 @@
 node {
-   def url = env.HUBOT_URL
-   def room = env.HUBOT_DEFAULT_ROOM
+   def env.url = env.HUBOT_URL
+   def env.room = env.HUBOT_DEFAULT_ROOM
    
    echo room
    echo url
 
+}
+
+node('jenkins-slave-ansible') {
    
    stage('Hubot Test Pipeline') {
-        hubotApprove message: "To proceed with this job?: your-bot-name jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: your-bot-name jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true, room: room, url: url
+        hubotApprove message: "To proceed with this job?: your-bot-name jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: your-bot-name jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true, room: env.room, url: env.url
     }
 }
