@@ -1,9 +1,9 @@
 node {
-   def env.url = env.HUBOT_URL
-   def env.room = env.HUBOT_DEFAULT_ROOM
+   env.url = env.HUBOT_URL
+   env.room = env.HUBOT_DEFAULT_ROOM
    
-   echo room
-   echo url
+   echo env.room
+   echo env.url
 
 }
 
