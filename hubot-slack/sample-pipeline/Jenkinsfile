@@ -9,26 +9,17 @@ node {
    hubotRoom = "HUBOT_DEFAULT_ROOM=" + env.room
    hubotFail = 'HUBOT_FAIL_ON_ERROR=false'
 
-
-    def jenkinsUrl = sh (
-      script: "oc get route jenkins -o jsonpath={.spec.host} -n hubot",
-      returnStdout: true
-    )
-
-   env.jenkinsUrl = "https://" + jenkinsUrl + "/job/${env.JOB_NAME}/${env.BUILD_NUMBER}"
+   env.jenkinsUrl = "https://jenkins/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/"
 
    echo env.BUILD_URL
 
    if (env.BUILD_URL == null) {
-
+     echo "build url not set"
      env.BUILD_URL = env.jenkinsUrl
    }
 
-
-  withEnv([hubotUrl, hubotRoom, hubotFail]) {
-    hubotSend message: 'building job hi'
-    hubotApprove message: 'Proceed with building this job?'
-  }
+  hubotSend message: 'building job hi' url: env.url env.room
+  hubotApprove message: 'Proceed with building this job?' url: env.url room: env.room
 
 }
 
