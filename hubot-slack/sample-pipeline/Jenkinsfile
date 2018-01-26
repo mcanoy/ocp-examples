@@ -11,8 +11,8 @@ node {
 
 
   withEnv([hubotUrl, hubotRoom, hubotFail]) {
-    hubotApprove message: 'Proceed with building this job?'
     hubotSend message: 'building job hi'
+    hubotApprove message: 'Proceed with building this job?'
   }
 
 }
