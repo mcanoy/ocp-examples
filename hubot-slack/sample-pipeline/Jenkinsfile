@@ -5,6 +5,16 @@ node {
    echo env.room
    echo env.url
 
+   hubotUrl = "HUBOT_URL=" + env.url
+   hubotRoom = "HUBOT_DEFAULT_ROOM=" + env.room
+   hubotFail = 'HUBOT_FAIL_ON_ERROR=false'
+
+
+  withEnv([hubotUrl, hubotRoom, hubotFail]) {
+    hubotApprove message: 'Proceed with building this job?'
+    hubotSend message: 'building job hi'
+  }
+
 }
 
 node('jenkins-slave-ansible') {
