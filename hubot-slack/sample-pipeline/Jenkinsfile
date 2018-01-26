@@ -18,8 +18,10 @@ node {
      env.BUILD_URL = env.jenkinsUrl
    }
 
-  hubotSend message: 'building job hi' url: env.url env.room
-  hubotApprove message: 'Proceed with building this job?' url: env.url room: env.room
+   stage('Hubot Test Pipeline') {
+      hubotApprove message: "Proceeeeddddd???????", failOnError: true, room: env.room, url: env.url
+    }
+
 
 }
 
