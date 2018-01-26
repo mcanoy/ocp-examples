@@ -11,7 +11,7 @@ node {
 
 
     def jenkinsUrl = sh (
-      script: "oc get route jenkins -o jsonpath={.spec.host} -n zurich-ci-cd",
+      script: "oc get route jenkins -o jsonpath={.spec.host} -n hubot",
       returnStdout: true
     )
 
