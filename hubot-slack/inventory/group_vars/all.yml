@@ -8,7 +8,7 @@ openshift_cluster_content:
   content:
   - name: "jenkins-build"
     namespace: "hubot"
-    template: "https://raw.githubusercontent.com/mcanoy/labs-ci-cd/hubot/openshift-templates/jenkins-s2i-build/template.json"
+    template: "https://raw.githubusercontent.com/rht-labs/labs-ci-cd/master/openshift-templates/jenkins-s2i-build/template.yaml"
     params: "{{ inventory_dir }}/../params/jenkins/build"
   - name: "jenkins-deploy"
     namespace: "hubot"
