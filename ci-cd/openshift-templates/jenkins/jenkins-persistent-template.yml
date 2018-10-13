@@ -29,7 +29,6 @@ objects:
       template.openshift.io/expose-uri: http://{.spec.host}{.spec.path}
     name: ${JENKINS_SERVICE_NAME}
   spec:
-    host: "${HOSTNAME}"
     tls:
       insecureEdgeTerminationPolicy: Redirect
       termination: edge
@@ -239,7 +238,3 @@ parameters:
   displayName: Shared Library Git Repo
   name: SHARED_LIB_REPO
   required: true
-- description: HOSTNAME
-  displayName: HOSTNAME
-  name: HOSTNAME
-  value: jenkins.apps.ehealth.rht-labs.com

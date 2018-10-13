@@ -9,7 +9,6 @@
       IMAGE_STREAM_TAG_NAMESPACE: mcanoy-ci-cd
       NAMESPACE: mcanoy-ci-cd
       NAMESPACE_DISPLAY_NAME: "McAnoy: CI/CD" 
-
     dev_project:
       NAMESPACE: mcanoy-dev
       NAMESPACE_DISPLAY_NAME: "McAnoy: Dev"
