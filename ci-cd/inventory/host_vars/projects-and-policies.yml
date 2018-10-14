@@ -1,0 +1,37 @@
+---
+ansible_connection: local
+openshift_cluster_content:
+- object: projectrequest
+  content:
+  - name: ci-cd
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/v3.9.0/files/projectrequest/template.yml"
+    action: create
+    params_from_vars: "{{ ci_cd_project }}"
+    tags:
+    - projects
+  - name: dev
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/v3.9.0/files/projectrequest/template.yml"
+    action: create
+    params_from_vars: "{{ dev_project }}"
+    tags:
+    - projects
+  - name: demo
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/v3.9.0/files/projectrequest/template.yml"
+    action: create
+    params_from_vars: "{{ demo_project }}"
+    tags:
+    - projects
+- object: policy
+  content:
+  - name: jenkins-dev-role-binding
+    template: "{{ playbook_dir }}/policy/jenkins-rolebinding.yaml"
+    params: "{{ playbook_dir }}/params/rolebindings/jenkins"
+    namespace: "{{ dev_project.NAMESPACE }}"
+    tags:
+    - policy
+  - name: jenkins-demo-role-binding
+    template: "{{ playbook_dir }}/policy/jenkins-rolebinding.yaml"
+    params: "{{ playbook_dir }}/params/rolebindings/jenkins"
+    namespace: "{{ demo_project.NAMESPACE }}"
+    tags:
+    - policy 

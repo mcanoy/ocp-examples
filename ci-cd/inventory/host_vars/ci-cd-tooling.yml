@@ -1,0 +1,63 @@
+---
+ansible_connection: local
+openshift_cluster_content:
+- galaxy_requirements: "{{ playbook_dir }}/galaxy_requirements.yml"
+- object: ci-cd-builds
+  content:
+  - name: jenkins-s2i
+    template: "https://raw.githubusercontent.com/rht-labs/labs-ci-cd/master/openshift-templates/jenkins-s2i-build/template.yml"
+    params: "{{ playbook_dir }}/params/jenkins/build"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - jenkins
+  - name: jenkins-slave-mvn
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    params: "{{ playbook_dir }}/params/jenkins-slaves/maven"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - jenkins-slaves
+    - mvn-slave
+  - name: jenkins-slave-npm
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    params: "{{ playbook_dir }}/params/jenkins-slaves/npm"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - jenkins-slaves
+    - npm-slave
+  - name: jenkins-slave-ansible
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    params: "{{ playbook_dir }}/params/jenkins-slaves/ansible"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - jenkins-slaves
+    - ansible-slave
+- object: ci-cd-deployments
+  content:
+  - name: jenkins-persistent
+    template: "{{ playbook_dir }}/openshift-templates/jenkins/jenkins-persistent-template.yml"
+    params: "{{ playbook_dir }}/params/jenkins/deploy"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - jenkins
+  - name: nexus
+    template: https://raw.githubusercontent.com/rht-labs/labs-ci-cd/v3.9.2/openshift-templates/nexus/template.yml
+    params: "{{ playbook_dir }}/params/nexus/deploy"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - nexus
+    post_steps:
+    - role: "labs-ci-cd/roles/configure-nexus"
+  - name: sonarqube-base-image
+    template: "{{ playbook_dir}}/openshift-templates/sonarqube/sonar-base-image.yml"
+    params_from_vars: "{{ ci_cd_project }}"
+    params: "{{ playbook_dir }}/params/sonarqube/base-image"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - sonar
+  - name: sonarqube
+    template: "{{ playbook_dir}}/openshift-templates/sonarqube/sonar-build-and-deploy.yml"
+    params_from_vars: "{{ ci_cd_project }}"
+    params: "{{ playbook_dir }}/params/sonarqube/build-and-deploy"
+    namespace: "{{ ci_cd_project.NAMESPACE }}"
+    tags:
+    - sonar

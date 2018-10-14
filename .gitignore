@@ -5,3 +5,5 @@
 **/.tern-project
 **/.DS_Store
 **/casl-ansible
+ci-cd/roles
+ci-cd/apply.retry
