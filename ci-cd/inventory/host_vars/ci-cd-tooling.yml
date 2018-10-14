@@ -11,21 +11,21 @@ openshift_cluster_content:
     tags:
     - jenkins
   - name: jenkins-slave-mvn
-    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.2/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
     params: "{{ playbook_dir }}/params/jenkins-slaves/maven"
     namespace: "{{ ci_cd_project.NAMESPACE }}"
     tags:
     - jenkins-slaves
     - mvn-slave
   - name: jenkins-slave-npm
-    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.2/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
     params: "{{ playbook_dir }}/params/jenkins-slaves/npm"
     namespace: "{{ ci_cd_project.NAMESPACE }}"
     tags:
     - jenkins-slaves
     - npm-slave
   - name: jenkins-slave-ansible
-    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.2/jenkins-slaves/templates/jenkins-slave-generic-template.yml
+    template: https://raw.githubusercontent.com/redhat-cop/containers-quickstarts/v1.3/jenkins-slaves/templates/jenkins-slave-generic-template.yml
     params: "{{ playbook_dir }}/params/jenkins-slaves/ansible"
     namespace: "{{ ci_cd_project.NAMESPACE }}"
     tags:
