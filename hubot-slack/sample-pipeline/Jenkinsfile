@@ -1,12 +1,28 @@
 node {
-   def url = env.HUBOT_URL
-   def room = env.HUBOT_DEFAULT_ROOM
+   env.url = env.HUBOT_URL
+   env.room = env.HUBOT_DEFAULT_ROOM
    
-   echo room
-   echo url
+   echo env.room
+   echo env.url
 
-   
+   hubotUrl = "HUBOT_URL=" + env.url
+   hubotRoom = "HUBOT_DEFAULT_ROOM=" + env.room
+   hubotFail = 'HUBOT_FAIL_ON_ERROR=false'
+
+   env.jenkinsUrl = "https://jenkins/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/"
+
+   echo env.BUILD_URL
+
+   if (env.BUILD_URL == null) {
+     echo "build url not set"
+     env.BUILD_URL = env.jenkinsUrl
+   }
+
    stage('Hubot Test Pipeline') {
-        hubotApprove message: "To proceed with this job?: your-bot-name jenkins proceed /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\nAbort job?: your-bot-name jenkins abort /job/${env.JOB_NAME}/${BUILD_NUMBER}/\n\n", failOnError: true, room: room, url: url
+      hubotApprove message: "Approve test stage?", failOnError: true, room: env.room, url: env.url
     }
+
+
 }
+
+

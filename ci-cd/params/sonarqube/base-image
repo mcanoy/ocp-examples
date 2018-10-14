@@ -1,0 +1,4 @@
+NAME=sonarqube-base
+IMAGE_STREAM_TAG_NAMESPACE=nope-ci-cd
+TAG_VERSION=7.3
+SOURCE_REPOSITORY_URL=https://github.com/mcanoy/sonarqube.git
