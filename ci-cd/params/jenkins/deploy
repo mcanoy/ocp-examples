@@ -1,4 +1,0 @@
-NAMESPACE=mcanoy-ci-cd
-MEMORY_LIMIT=4Gi
-JENKINS_IMAGE_STREAM_TAG=jenkins:latest
-SHARED_LIB_REPO=https://github.com/mcanoy/jenkins-shared-library.git

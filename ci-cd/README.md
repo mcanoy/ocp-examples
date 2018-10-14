@@ -67,3 +67,8 @@ To change a variable in the apply.yml file provide the value like so:
 ansible-playbook apply.yml -i inventory/ -e target=tools -e "ci_cd_namespace=my-ci-cd"
 ```
 
+## Dynamic Variables
+
+Variables can be set at runtime as noted in the section above. To find which variables correspond to the output start with the apply.yml file.
+
+

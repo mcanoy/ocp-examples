@@ -1,0 +1,3 @@
+nexus:
+  VOLUME_CAPACITY: 10Gi
+  MEMORY_LIMIT: 2Gi

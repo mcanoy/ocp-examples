@@ -2,11 +2,7 @@
 - name: Deploy {{ target }} 
   hosts: "{{ target }}"
   vars:
-    ci_cd_namespace: mcanoy-ci-cd
-    dev_namespace: mcanoy-dev
-    test_namespace: mcanoy-demo
     ci_cd_project:
-      IMAGE_STREAM_TAG_NAMESPACE: mcanoy-ci-cd
       NAMESPACE: mcanoy-ci-cd
       NAMESPACE_DISPLAY_NAME: "McAnoy: CI/CD" 
     dev_project:
@@ -15,6 +11,17 @@
     demo_project:
       NAMESPACE: mcanoy-demo
       NAMESPACE_DISPLAY_NAME: "McAnoy: Demo"
+    rolebindings:
+      PIPELINES_NAMESPACE: "{{ ci_cd_project.NAMESPACE }}"
+  vars_files:
+    - "{{ playbook_dir }}/params/jenkins/build.yml"
+    - "{{ playbook_dir }}/params/jenkins/deploy.yml"
+    - "{{ playbook_dir }}/params/jenkins-slaves/ansible.yml"
+    - "{{ playbook_dir }}/params/jenkins-slaves/maven.yml"
+    - "{{ playbook_dir }}/params/jenkins-slaves/npm.yml"
+    - "{{ playbook_dir }}/params/nexus/deploy.yml"
+    - "{{ playbook_dir }}/params/sonarqube/base-image.yml"
+    - "{{ playbook_dir }}/params/sonarqube/build-and-deploy.yml"
   tasks:
     - include_role:
         name: openshift-applier/roles/openshift-applier

@@ -25,13 +25,13 @@ openshift_cluster_content:
   content:
   - name: jenkins-dev-role-binding
     template: "{{ playbook_dir }}/policy/jenkins-rolebinding.yaml"
-    params: "{{ playbook_dir }}/params/rolebindings/jenkins"
+    params_from_vars: "{{ rolebindings }}"
     namespace: "{{ dev_project.NAMESPACE }}"
     tags:
     - policy
   - name: jenkins-demo-role-binding
     template: "{{ playbook_dir }}/policy/jenkins-rolebinding.yaml"
-    params: "{{ playbook_dir }}/params/rolebindings/jenkins"
+    params_from_vars: "{{ rolebindings }}"
     namespace: "{{ demo_project.NAMESPACE }}"
     tags:
     - policy 
