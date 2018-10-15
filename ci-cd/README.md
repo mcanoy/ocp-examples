@@ -4,11 +4,11 @@ This project is an example of how to build a CI / CD environment in OpenShift. I
 
 ## What's Happening, Where Are These Artificats Coming From?
 
-This repository pulls in other repos and artifacts to get all pieces running. This repo is really just coordinating it all
+This repository pulls in other repos and artifacts to get all pieces running. This repo is really just coordinating it all.
 
 ### Jenkins
 
-Jenkins is being built via [S2I](https://github.com/openshift/source-to-image) from the (rht-labs project| https://github.com/rht-labs/labs-ci-cd.git). Look in the s2i-config/jenkins-master folder and check out the README.md for set up. A lot of the deployment configuration is set in the init.groovy.d. The base Jenkins images is pulled from the version provided by OpenShift and is intergrated into the auth system.
+Jenkins is being built via [S2I](https://github.com/openshift/source-to-image) from the [rht-labs project](https://github.com/rht-labs/labs-ci-cd.git). Look in the s2i-config/jenkins-master folder and check out the README.md for set up. A lot of the deployment configuration is set in the init.groovy.d. The base Jenkins images is pulled from the version provided by OpenShift and is intergrated into the auth system.
 
 Three Jenkins slaves are added for: Ansible, Maven and Node. The repo for the quickstarts is found [here](https://github.com/redhat-cop/containers-quickstarts.git).
 
