@@ -1,4 +1,5 @@
 **/target/
+**/.mvn/
 **/.classpath
 **/.settings
 **/.project
