@@ -21,7 +21,7 @@
         }
       },
       {
-        "commandLine": "sed -i 's@\".*\"@\\\"'\"${server.api-9000}\"'/api/todos\\\"@' /projects/todolist-fe/src/config/index.js",
+        "commandLine": "sed -i 's@\".*\"@\\\"'\"${server.api-9000}\"'/api/todos\\\"@' /projects/todolist-fe/src/config/index.js && echo \"done\"",
         "name": "fe-fix-ap-url",
         "type": "custom",
         "attributes": {}
