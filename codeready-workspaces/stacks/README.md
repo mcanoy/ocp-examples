@@ -4,7 +4,7 @@
 
 This custom stack is intended for use in the DO500 course offered by Red Hat Training. The materials are available on GitHub. Since the technology is constantly changing this stack should fall out of date quickly.
 
-This stack can be added through the swagger spec in the codeready application. The [do500-raw-config.json](raw config file) is a json file that can is deployed to OpenShift. It contains yaml files for Kubernetes objects, commands that can be run to pull in and run the course work, the dev machines with the required components, the servers for the routes and the volume need for mongo. 
+This stack can be added through the swagger spec in the codeready application. The [raw config file](do500-raw-config.json) is a json file that can is deployed to OpenShift. It contains yaml files for Kubernetes objects, commands that can be run to pull in and run the course work, the dev machines with the required components, the servers for the routes and the volume need for mongo. 
 
 The tech stack included in this stack is NPM, Ansible, Mongo DB and the OC client. 
 
