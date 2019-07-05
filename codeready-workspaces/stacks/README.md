@@ -8,7 +8,7 @@ This stack can be added through the swagger spec in the codeready application. T
 
 The tech stack included in this stack is NPM, Ansible, Mongo DB and the OC client. 
 
-For reference the do500-stack.yml and Dockerfile ileis are included in this repo
+For reference the do500-stack.yml and Dockerfile files are included in this repo
 
 ## Workspace
 
