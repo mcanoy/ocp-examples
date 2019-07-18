@@ -8,3 +8,4 @@
 **/casl-ansible
 ci-cd/roles
 ci-cd/apply.retry
+codeready-workspaces/stacks/playbook/stack.retry

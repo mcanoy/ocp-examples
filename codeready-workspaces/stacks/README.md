@@ -6,6 +6,10 @@ This custom stack is intended for use in the DO500 course offered by Red Hat Tra
 
 This stack can be added through the swagger spec in the codeready application. The [raw config file](do500-raw-config.json) is a json file that can be deployed to Codeready. It contains yaml files for Kubernetes objects, commands that can be run to pull in and run the course work, the dev machines with the required components, the servers for the routes and the volume need for mongo. 
 
+A shell script is provided to add the [raw config file](do500-raw-config.json). Modify the environment variables.
+
+An ansible playbook is also provided in the same manner as the shell script if your more into that.
+
 The tech stack included in this stack is NPM, Ansible, Mongo DB and the OC client. 
 
 For reference the do500-stack.yml and Dockerfile ileis are included in this repo

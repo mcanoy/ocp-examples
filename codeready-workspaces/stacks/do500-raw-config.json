@@ -114,6 +114,5 @@
   ],
   "scope": "general",
   "description": "DO500 NPM Ansible Mongo",
-  "name": "NPM-Ansible-Mongo",
-  "id": "stackgan6wpx9p42kj47k"
+  "name": "NPM-Ansible-Mongo"
 }
