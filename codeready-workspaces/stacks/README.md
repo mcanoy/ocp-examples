@@ -12,14 +12,14 @@ An ansible playbook is also provided in the same manner as the shell script if y
 
 The tech stack included in this stack is NPM, Ansible, Mongo DB and the OC client. 
 
-For reference the do500-stack.yml and Dockerfile ileis are included in this repo
+For reference the do500-stack.yml and Dockerfile files are included in this repo
 
 ## Workspace
 
-Once the stack is added to Codeready, create a new workspace through the UI. Accept all the defaults. When the workspace is up and running, do the following steps
+Once the stack is added to Codeready, create a new workspace through the UI choosing the new stack you previously created (Npm Ansible Mongo). Accept all the defaults. When the workspace is up and running, do the following steps
 
-1. Run the command `init-api`
-2. Run the command `init-fe`
+1. Run the command `init-api` (it is completed with a `done` message)
+2. Run the command `init-fe` (it is completed with a `done` message)
 3. Replace the contents of the todolist-fe/vue.config.js file with the following
 
 ```
@@ -30,7 +30,7 @@ module.exports = {
   }
 };
 ```
-3. Run the command `fe-fix-api-url`
+3. Run the command `fe-fix-api-url` (it is completed with a `done` message)
 4. Run the command `api-start`
 5. run the command `fe-start` 
 6. The fe-start command should print a preview URL. Click on that URL to navigate to the application. Verify that the TODOs are populate with values from mongo by clicking on the TOOOs link and verify that a TODO is displayed that mentions learning about mongo. If true, the set up has been successful.
