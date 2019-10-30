@@ -1,0 +1,31 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+  labels:
+    app: agent-nc-server-ios
+    build: agent-nc-server-ios
+    name: agent-nc-server-ios-pipeline
+    type: pipeline
+  name: ios
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: {}
+  output: {}
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: ios
+    git:
+      ref: ios
+      uri: https://github.com/mcanoy/ocp-examples.git
+    type: Git
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - type: ConfigChange
+
