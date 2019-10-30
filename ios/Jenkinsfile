@@ -1,0 +1,14 @@
+pipeline {
+  agent { label 'ios' }
+
+  stages {
+    stage('Center Stage') {
+      steps {
+        echo 'IOS!!!!!!!!!!!!!!!!!!!!
+        sh 'touch ios.android'
+      }
+    }
+
+  }
+
+}
