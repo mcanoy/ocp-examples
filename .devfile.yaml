@@ -1,0 +1,24 @@
+schemaVersion: 2.1.0
+metadata:
+  name: lodestar
+  version: 1.0.0
+components:
+  - name: universal-tooling-container
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-0e189d9
+      endpoints:
+        - name: webapp
+          targetPort: 8080
+      memoryLimit: 4Gi
+  - name: projects
+    volume:
+      size: 3Gi
+projects:
+- name: frontend
+  git:
+    remotes:
+      origin: "https://github.com/rht-labs/lodestar-frontend.git"
+- name: backend
+  git:
+    remotes:
+      origin: "https://github.com/rht-labs/lodestar-backend.git"
