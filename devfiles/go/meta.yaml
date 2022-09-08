@@ -1,0 +1,7 @@
+---
+displayName: Go
+description: Stack with Go 1.14 McAnoy
+tags: ["Community", "Debian", "Go"]
+icon: /images/go.svg
+links:
+  v2: https://github.com/che-samples/golang-example/tree/devfilev2

@@ -45,7 +45,7 @@ commands:
     exec:
       label: "Backend Test"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/lodestar-engagements
+      workingDir: ${PROJECTS_ROOT}/engagements
       commandLine: "./mvnw test"
       group:
         kind: test
@@ -53,7 +53,7 @@ commands:
     exec:
       label: "Start Dev Mode"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/lodestar-engagements
+      workingDir: ${PROJECTS_ROOT}/engagements
       commandLine: "./mvnw compile quarkus:dev"
       group:
         kind: run
