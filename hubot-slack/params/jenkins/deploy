@@ -1,4 +1,0 @@
-NAMESPACE=hubot
-MEMORY_LIMIT=2Gi
-HUBOT_DEFAULT_ROOM=jenkins
-HUBOT_URL=http://hubot:8080/

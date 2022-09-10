@@ -1,4 +1,0 @@
-NAME=sample-app
-PIPELINE_SOURCE_REPOSITORY_URL=https://github.com/mcanoy/ocp-examples.git
-PIPELINE_SOURCE_REPOSITORY_REF=hubot
-PIPELINE_CONTEXT_DIR=hubot-slack/sample-pipeline

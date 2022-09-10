@@ -1,4 +1,0 @@
-SOURCE_REPOSITORY_URL=https://github.com/mcanoy/labs-ci-cd.git
-NAME=jenkins
-SOURCE_REPOSITORY_REF=hubot
-SOURCE_REPOSITORY_CONTEXT_DIR=s2i-config/jenkins-master

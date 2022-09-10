@@ -1,5 +1,0 @@
-jenkins_deploy:
-  NAMESPACE: "{{ ci_cd_project.NAMESPACE }}"
-  MEMORY_LIMIT: 4Gi
-  JENKINS_IMAGE_STREAM_TAG: jenkins:latest
-  SHARED_LIB_REPO: https://github.com/mcanoy/jenkins-shared-library.git

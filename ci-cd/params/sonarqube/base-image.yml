@@ -1,5 +1,0 @@
-sonar_base:
-  NAME: sonarqube-base
-  IMAGE_STREAM_TAG_NAMESPACE: "{{ ci_cd_project.NAMESPACE }}"
-  TAG_VERSION: 7.3
-  SOURCE_REPOSITORY_URL: https://github.com/mcanoy/sonarqube.git
