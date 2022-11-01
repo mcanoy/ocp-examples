@@ -39,9 +39,9 @@ components:
       image: docker.io/confluentinc/cp-zookeeper@latest
       env:
         - name: ZOOPKEEPER_CLIENT_PORT
-          value: 2181
+          value: '2181'
         - name: ZOOPKEEPER_TICK_TIME
-          value: 2000
+          value: '2000'
   - name: projects
     volume:
       size: 3Gi
